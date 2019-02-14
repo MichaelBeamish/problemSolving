@@ -7,9 +7,12 @@ function addOne(arr) {
       break;
     } else {
       arr[i] = 0;
+      if (i === 0) {
+        arr.unshift(1);
+      }
     }
   }
-  console.log(my_array);
+  console.log(arr);
 }
 
 addOne(my_array);
