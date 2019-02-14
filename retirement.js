@@ -1,16 +1,16 @@
 var month = [
-  "January",
-  "February",
-  "March",
-  "April",
+  "Jan",
+  "Feb",
+  "Mar",
+  "Apr",
   "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December"
+  "Jun",
+  "Jul",
+  "Aug",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Dec"
 ];
 
 function retirement(starting, percent, addition, years) {
@@ -21,15 +21,16 @@ function retirement(starting, percent, addition, years) {
     console.log(currentYear + i + ": ");
     for (let i = 0; i < 12; i++) {
       console.log(
-        " -" +
+        "    " +
           month[i] +
           ": $" +
           total.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, "$&,")
       );
       total *= monthlyPercent;
-      total += addition / 12;
+      total += addition;
     }
+    console.log("---------------------|");
   }
 }
 
-retirement(200000, 6, 24000, 20);
+retirement(1, 12, 100000, 20);
